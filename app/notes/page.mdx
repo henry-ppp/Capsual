@@ -7,7 +7,7 @@ This is a **visual note** written in MDX. You can mix Markdown with React compon
   Diagrams are rendered from Mermaid code blocks at build time.
 </VisualNote>
 
-## Diagrams
+## Flow & Process
 
 ### Flowchart
 
@@ -29,6 +29,18 @@ sequenceDiagram
     API->>User: Response
 ```
 
+### State Diagram
+
+```mermaid
+stateDiagram-v2
+    [*] --> Idle
+    Idle --> Loading : fetch
+    Loading --> Success : resolve
+    Loading --> Error : reject
+    Success --> Idle : reset
+    Error --> Idle : retry
+```
+
 ### Timeline
 
 ```mermaid
@@ -46,6 +58,39 @@ flowchart LR
     A[Frontend] --> FullStack[Full-stack]
     B[Backend] --> FullStack
     C[DevOps] --> FullStack
+```
+
+## Structure & Data
+
+### Class Diagram
+
+```mermaid
+classDiagram
+    class User {
+        +string id
+        +string email
+        +login()
+    }
+    class Session {
+        +string token
+        +validate()
+    }
+    User --> Session : creates
+```
+
+### ER Diagram
+
+```mermaid
+erDiagram
+    USER ||--o{ POST : creates
+    USER {
+        string id PK
+        string email
+    }
+    POST {
+        string id PK
+        string content
+    }
 ```
 
 ### Mind Map
@@ -72,6 +117,60 @@ flowchart TD
     app[app] --> layout[layout.tsx]
     app --> notes[notes]
     notes --> page[page.mdx]
+```
+
+## Planning & Analytics
+
+### Gantt Chart
+
+```mermaid
+gantt
+    title Sprint 1
+    section Phase 1
+    Design :a1, 2024-01-01, 5d
+    section Phase 2
+    Develop :a2, after a1, 10d
+    Test :a3, after a2, 3d
+```
+
+### Pie Chart
+
+```mermaid
+pie title Stack
+    "React" : 40
+    "Next.js" : 30
+    "Tailwind" : 20
+    "Other" : 10
+```
+
+### User Journey
+
+```mermaid
+journey
+    title Sign up
+    section Visit
+      Land on page : 5: User
+      Click sign up : 4: User
+    section Register
+      Fill form : 3: User
+      Submit : 5: User
+    section Complete
+      Verify email : 4: User
+```
+
+## Version Control
+
+### Git Graph
+
+```mermaid
+gitGraph
+    commit
+    branch feature
+    checkout feature
+    commit
+    checkout main
+    merge feature
+    commit
 ```
 
 ## Visual Notes

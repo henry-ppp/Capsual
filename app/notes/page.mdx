@@ -1,0 +1,93 @@
+# My Visual Note
+
+This is a **visual note** written in MDX. You can mix Markdown with React components!
+
+<VisualNote variant="sticky" title="Quick reminder">
+  MDX lets you embed React components directly in your content.
+  Diagrams are rendered from Mermaid code blocks at build time.
+</VisualNote>
+
+## Diagrams
+
+### Flowchart
+
+```mermaid
+flowchart TD
+    Start --> Process --> Decide --> End
+```
+
+### Sequence
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant API
+    participant DB
+    User->>API: Login request
+    API->>DB: Query
+    DB->>API: Results
+    API->>User: Response
+```
+
+### Timeline
+
+```mermaid
+timeline
+    title Project milestones
+    2020 : Project started
+    2022 : v1.0 release
+    2024 : MDX support added
+```
+
+### Skill Overlap
+
+```mermaid
+flowchart LR
+    A[Frontend] --> FullStack[Full-stack]
+    B[Backend] --> FullStack
+    C[DevOps] --> FullStack
+```
+
+### Mind Map
+
+```mermaid
+mindmap
+  root((Next.js))
+    Routing
+      App Router
+      Pages
+    Rendering
+      SSR
+      SSG
+      ISR
+    Data
+      fetch
+      Server Actions
+```
+
+### Project Structure
+
+```mermaid
+flowchart TD
+    app[app] --> layout[layout.tsx]
+    app --> notes[notes]
+    notes --> page[page.mdx]
+```
+
+## Visual Notes
+
+<VisualNote variant="tip" title="Pro tip">
+  Use different variants: `info`, `tip`, `idea`, `warning`, or `sticky`
+  to style your notes for different contexts.
+</VisualNote>
+
+<VisualNote variant="idea">
+  No title? The icon still shows. Great for quick visual cues.
+</VisualNote>
+
+## What you can do
+
+- Write **bold** and *italic* text
+- Use lists and code blocks
+- Embed Mermaid diagrams with fenced code blocks
+- Export metadata for dynamic pages
